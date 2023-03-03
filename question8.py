@@ -15,7 +15,7 @@ else:
 
 gross_income = pay_rate * hours_worked
 
-# cal oF income aFter tax oF 20%
+# it calculates the income aFter 20% tax 
 tax_rate = 0.2
 tax_amount = gross_income * tax_rate
 net_income = gross_income - tax_amount
