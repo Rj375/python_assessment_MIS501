@@ -2,19 +2,19 @@
 #Question 1
 name = input("Enter your Name:- ")
 phone = input("Enter your Phone Number:- ")
-birth_year = int(input("Enter your Birth Year:- ")) #year is being converted to interger here itself.
-current_city = input("Enter your Current City:- ")
+birthYear = int(input("Enter your Birth Year(yyyy):- ")) #year is being converted to interger here itself.
+currentCity = input("Enter your Current City:- ")
 email = input("Enter your Email Address:- ")
 
 # it calculates the age of the user.
-age = 2023 - birth_year 
+age = 2023 - birthYear 
 
 #it checks where the user is 21 years old.
 if age > 21: 
     print("The name is:-", name)
     print("The phone is:-", phone)
     print("The age is:-", age)
-    print("The current city is:-", current_city)
+    print("The current city is:-", currentCity)
     print("The email is:-", email)
 else:
     print("Customer has to be above 21 years old to view the information")    
@@ -41,53 +41,53 @@ else:
 
 #Question 3
 # the list of orders for current week
-current_week_orders = input("Enter the list of orders total prices for the current week separated by spaces: ")
-current_week_orders = current_week_orders.split()
-current_week_orders = [float(x) for x in current_week_orders]
+currentWeekOrders = input("Enter the list of orders total prices for the current week separated by spaces: ")
+currentWeekOrders = currentWeekOrders.split()
+currentWeekOrders = [float(x) for x in currentWeekOrders]
 
 # the list of orders for previous week
-previous_week_orders = input("Enter the list of orders total prices for the previous week separated by spaces: ")
-previous_week_orders = previous_week_orders.split()
-previous_week_orders = [float(x) for x in previous_week_orders]
+previousWeekOrders = input("Enter the list of orders total prices for the previous week separated by spaces: ")
+previousWeekOrders = previousWeekOrders.split()
+previousWeekOrders = [float(x) for x in previousWeekOrders]
 
 # it calculates average per person sale for current week
-total_number_of_persons_visited_in_the_current_Week = len(current_week_orders)
-total_sale_for_current_week  = sum(current_week_orders)
-average_sale_current_week = total_sale_for_current_week  / total_number_of_persons_visited_in_the_current_Week
+totalNumberOfPersonsVisitedInTheCurrentWeek = len(currentWeekOrders)
+totalSaleForCurrentWeek  = sum(currentWeekOrders)
+averageSaleCurrentWeek = totalSaleForCurrentWeek  / totalNumberOfPersonsVisitedInTheCurrentWeek
 
 # it calculates average per person sale for previous week
-total_number_of_persons_visited_in_the_previous_Week = len(previous_week_orders)
-total_sale_for_previous_week = sum(previous_week_orders)
-average_sale_previous_week = total_sale_for_previous_week / total_number_of_persons_visited_in_the_previous_Week
+totalNumberOfPersonsVisitedInThePreviousWeek = len(previousWeekOrders)
+totalSaleForPreviousWeek = sum(previousWeekOrders)
+averageSalePreviousWeek = totalSaleForPreviousWeek / totalNumberOfPersonsVisitedInThePreviousWeek
 
 
-print("Current Week per person average sale = AUD", average_sale_current_week)
-print("Last Week per person average sale = AUD", average_sale_previous_week)
+print("Current Week per person average sale = AUD", averageSaleCurrentWeek)
+print("Last Week per person average sale = AUD", averageSalePreviousWeek)
 
 
 
 
 #Question 4
 
-total_amount = float(input("Total amount: $"))
+totalAmount = float(input("Total amount: $"))
 tip = float(input("Tip (In Cents): ")) / 100
-payment_by_card = float(input("Total Payment received by Card: $"))
-service_charge_card = float(input("Service Charge on Payment made by Card (in percentage): ")) / 100
-payment_by_cash = float(input("Total Payment received in Cash: $"))
+paymentByCard = float(input("Total Payment received by Card: $"))
+serviceChargeCard = float(input("Service Charge on Payment made by Card (in percentage): ")) / 100
+paymentByCash = float(input("Total Payment received in Cash: $"))
 
 # it calculates total received amount
-total_received_amount = payment_by_card * (1 - service_charge_card) + payment_by_cash
+totalReceivedAmount = paymentByCard * (1 - serviceChargeCard) + paymentByCash
 
 #it calculates total due amount
-total_due_amount = total_amount + tip
+totalDueAmount = totalAmount + tip
 
 #it calculates change that should be returned to customer
-change = total_received_amount - total_due_amount
+change = totalReceivedAmount - totalDueAmount
 
-outstanding = total_due_amount - total_received_amount
+outstanding = totalDueAmount - totalReceivedAmount
 
 
-if total_received_amount < total_due_amount:
+if totalReceivedAmount < totalDueAmount:
     print("Outstanding amount and need to be paid by customer:- $", outstanding)
 else:    
     print("Change to be returned to the customer:- $", change)
@@ -101,42 +101,42 @@ distance = float(input("Please enter the distance in KM between your address and
 
 # it calculates delivery charge based on distance
 if distance > 0 and distance <= 5:
-    delivery_charge = 5
+    deliveryCharge = 5
 elif distance > 5 and distance <= 10:
-    delivery_charge = 8
+    deliveryCharge = 8
 elif distance > 10 and distance <= 12:
-    delivery_charge = 10
+    deliveryCharge = 10
 else:
     print("Delivery cannot be done for distances greater than 12 KM.")
     exit()
 
 
-print("The delivery charge for the address", address, "located", distance, "KM from the restaurant is $", delivery_charge)
+print("The delivery charge for the address", address, "located", distance, "KM from the restaurant is $", deliveryCharge)
 
 
 
 
 
 #Question 6
-order_cost = float(input("Order base cost: AUD" ))
-order_type = int(input("Order type (1 for dine in, 2 for pick up, 3 for delivery): "))
+orderCost = float(input("Order base cost: AUD" ))
+orderType = int(input("Order type (1 for dine in, 2 for pick up, 3 for delivery): "))
 
 # it calculates charges based on order type
-# dine_in_order_type = 1,
-# pickup_order_type = 2,
-# delivery_order_type = 3
-if order_type == 1:
-    total_charges = order_cost * 1.08
-elif order_type == 2:
-    total_charges = order_cost
-elif order_type == 3:
-    total_charges = order_cost * 1.1
+# dineInOrderType = 1,
+# pickupOrderType = 2,
+# deliveryOrderType = 3
+if orderType == 1:
+    totalCharges = orderCost * 1.08
+elif orderType == 2:
+    totalCharges = orderCost
+elif orderType == 3:
+    totalCharges = orderCost * 1.1
 else:
     print("Invalid order type. Please enter 1, 2, or 3.")
     exit()
 
 
-print("Total charges: AUD", total_charges)
+print("Total charges: AUD", totalCharges)
 
 
 
@@ -144,17 +144,17 @@ print("Total charges: AUD", total_charges)
 
 #Question 7
 temperature = float(input("Enter the temperature value: "))
-conversion_form = int(input("Enter the conversion form (1 for Centigrade to Fahrenheit, 2 for Fahrenheit to Centigrade): "))
+conversionForm = int(input("Enter the conversion form (1 for Centigrade to Fahrenheit, 2 for Fahrenheit to Centigrade): "))
 
 # it converts the temperature
-if conversion_form == 1:
+if conversionForm == 1:
     # From Centigrade to Fahrenheit
-    temperature_converted = (9/5) * temperature + 32
-    print(temperature, "Centigrade =", temperature_converted, "Fahrenheit")
-elif conversion_form == 2:
+    temperatureConverted = (9/5) * temperature + 32
+    print(temperature, "Centigrade =", temperatureConverted, "Fahrenheit")
+elif conversionForm == 2:
     # From Fahrenheit to Centigrade
-    temperature_converted = (5/9) * (temperature - 32)
-    print(temperature, "Fahrenheit =", temperature_converted, "Centigrade")
+    temperatureConverted = (5/9) * (temperature - 32)
+    print(temperature, "Fahrenheit =", temperatureConverted, "Centigrade")
 else:
     print("Invalid entry.")
 
@@ -165,28 +165,28 @@ else:
 
 #Question 8
 position = input("Enter the position of the employee (chef, waiter, or delivery): ")
-hours_worked = float(input("Enter the number of monthly hours worked: "))
+hoursWorked = float(input("Enter the number of monthly hours worked: "))
 
-
-if position.lower() == "chef":
-    pay_rate = 50
-elif position.lower() == "waiter":
-    pay_rate = 40
-elif position.lower() == "delivery":
-    pay_rate = 35
+# checks the position that user has entered.
+if position == "chef":
+    payRate = 50
+elif position == "waiter":
+    payRate = 40
+elif position == "delivery":
+    payRate = 35
 else:
     print("Invalid position.")
     exit()
 
-gross_income = pay_rate * hours_worked
+grossIncome = payRate * hoursWorked
 
 # it calculates the income aFter 20% tax 
-tax_rate = 0.2
-tax_amount = gross_income * tax_rate
-net_income = gross_income - tax_amount
+taxRate = 0.2
+taxAmount = grossIncome * taxRate
+netIncome = grossIncome - taxAmount
 
 
-print("The net monthly income of the employee is:", net_income)
+print("The net monthly income of the employee is:", netIncome)
 
 
 
@@ -195,12 +195,12 @@ print("The net monthly income of the employee is:", net_income)
 
 
 #Question 9
-mobile_phone = input("Insert your phone number")
+mobilePhone = input("Insert your phone number")
 password = input("Enter your password")
 
 
-#it checks where the mobile_phone has exactly 10 digits and where the length oF password is greater than or equal to 8.
-if len(mobile_phone) == 10 and len(password) >= 8:
+#it checks where the mobilePhone has exactly 10 digits and where the length oF password is greater than or equal to 8.
+if len(mobilePhone) == 10 and len(password) >= 8:
     print("Valid Credentials")
 else:
     print("Invalid Credentials")
