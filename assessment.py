@@ -68,30 +68,29 @@ print("Last Week per person average sale = AUD", average_sale_previous_week)
 
 
 #Question 4
-# the list of orders for current week
-current_week_orders = input("Enter the list of orders total prices for the current week separated by spaces: ")
-current_week_orders = current_week_orders.split()
-current_week_orders = [float(x) for x in current_week_orders]
 
-# the list of orders for previous week
-previous_week_orders = input("Enter the list of orders total prices for the previous week separated by spaces: ")
-previous_week_orders = previous_week_orders.split()
-previous_week_orders = [float(x) for x in previous_week_orders]
+total_amount = float(input("Total amount: $"))
+tip = float(input("Tip (In Cents): ")) / 100
+payment_by_card = float(input("Total Payment received by Card: $"))
+service_charge_card = float(input("Service Charge on Payment made by Card (in percentage): ")) / 100
+payment_by_cash = float(input("Total Payment received in Cash: $"))
 
-# it calculates average per person sale for current week
-total_number_of_persons_visited_in_the_current_Week = len(current_week_orders)
-total_sale_for_current_week  = sum(current_week_orders)
-average_sale_current_week = total_sale_for_current_week  / total_number_of_persons_visited_in_the_current_Week
+# it calculates total received amount
+total_received_amount = payment_by_card * (1 - service_charge_card) + payment_by_cash
 
-# it calculates average per person sale for previous week
-total_number_of_persons_visited_in_the_previous_Week = len(previous_week_orders)
-total_sale_for_previous_week = sum(previous_week_orders)
-average_sale_previous_week = total_sale_for_previous_week / total_number_of_persons_visited_in_the_previous_Week
+#it calculates total due amount
+total_due_amount = total_amount + tip
+
+#it calculates change that should be returned to customer
+change = total_received_amount - total_due_amount
+
+outstanding = total_due_amount - total_received_amount
 
 
-print("Current Week per person average sale = AUD", average_sale_current_week)
-print("Last Week per person average sale = AUD", average_sale_previous_week)
-
+if total_received_amount < total_due_amount:
+    print("Outstanding amount and need to be paid by customer:- $", outstanding)
+else:    
+    print("Change to be returned to the customer:- $", change)
 
 
 
