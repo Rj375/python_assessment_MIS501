@@ -64,3 +64,6 @@ print(arr3,arr4,arr5)
 #tuple, it is immutable or is not editable. 
 tup = ('python', 'javascript', 26)
 tup1 = 1,2 #by deFault it has become tupple aFter puting comma.
+
+print(sum(arr)) #sums the array or list
+print(sorted(arr)) #sorts the list.
