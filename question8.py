@@ -10,7 +10,7 @@ elif position == "delivery":
     payRate = 35
 else:
     print("Invalid position.")
-    exit()
+    exit() #with this aFter calculation is done the execution ends iF it prints Invalid position.
 
 grossIncome = payRate * hoursWorked
 

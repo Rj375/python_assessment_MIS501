@@ -18,7 +18,7 @@ if age > 21:
     print("The email is:-", email)
 else:
     print("Customer has to be above 21 years old to view the information")    
-
+ 
 
 
 #Question 2
@@ -42,22 +42,28 @@ else:
 #Question 3
 # the list of orders for current week
 currentWeekOrders = input("Enter the list of orders total prices for the current week separated by spaces: ")
-currentWeekOrders = currentWeekOrders.split()
-currentWeekOrders = [float(x) for x in currentWeekOrders]
+currentWeekOrders = currentWeekOrders.split() #it splits string input into a list/array oF characters.
+
+for currentWeek in currentWeekOrders: #loops through the input that user entered
+   convertCurrentWeekIntoFloat = float(currentWeek) #converts the currentWeek into a float
+   currentWeekOrders = [convertCurrentWeekIntoFloat] #assigns converted input in list/array.
 
 # the list of orders for previous week
 previousWeekOrders = input("Enter the list of orders total prices for the previous week separated by spaces: ")
-previousWeekOrders = previousWeekOrders.split()
-previousWeekOrders = [float(x) for x in previousWeekOrders]
+previousWeekOrders = previousWeekOrders.split() #it splits string input into a list/array oF characters.
+
+for previousWeek in previousWeekOrders: #loops through the input that user entered
+   convertPreviousWeekIntoFloat = float(previousWeek) #converts the previousWeek into a float
+   previousWeekOrders = [convertPreviousWeekIntoFloat] #assigns converted input in list/array.
 
 # it calculates average per person sale for current week
-totalNumberOfPersonsVisitedInTheCurrentWeek = len(currentWeekOrders)
-totalSaleForCurrentWeek  = sum(currentWeekOrders)
+totalNumberOfPersonsVisitedInTheCurrentWeek = len(currentWeekOrders) #checks the length
+totalSaleForCurrentWeek  = sum(currentWeekOrders) #adds all the inputs
 averageSaleCurrentWeek = totalSaleForCurrentWeek  / totalNumberOfPersonsVisitedInTheCurrentWeek
 
 # it calculates average per person sale for previous week
-totalNumberOfPersonsVisitedInThePreviousWeek = len(previousWeekOrders)
-totalSaleForPreviousWeek = sum(previousWeekOrders)
+totalNumberOfPersonsVisitedInThePreviousWeek = len(previousWeekOrders) #checks the length
+totalSaleForPreviousWeek = sum(previousWeekOrders) #adds all the inputs
 averageSalePreviousWeek = totalSaleForPreviousWeek / totalNumberOfPersonsVisitedInThePreviousWeek
 
 
@@ -87,11 +93,11 @@ change = totalReceivedAmount - totalDueAmount
 outstanding = totalDueAmount - totalReceivedAmount
 
 
-if totalReceivedAmount < totalDueAmount:
+if totalReceivedAmount < totalDueAmount: #checks whether totalReceivedAmount is less than totalDueAmount.
     print("Outstanding amount and need to be paid by customer:- $", outstanding)
 else:    
     print("Change to be returned to the customer:- $", change)
-
+    
 
 
 
@@ -99,7 +105,7 @@ else:
 address = input("Please enter your full address: ")
 distance = float(input("Please enter the distance in KM between your address and the restaurant: "))
 
-# it calculates delivery charge based on distance
+# it checks delivery charge based on distance using comparative operators.
 if distance > 0 and distance <= 5:
     deliveryCharge = 5
 elif distance > 5 and distance <= 10:
@@ -108,7 +114,7 @@ elif distance > 10 and distance <= 12:
     deliveryCharge = 10
 else:
     print("Delivery cannot be done for distances greater than 12 KM.")
-    exit()
+    
 
 
 print("The delivery charge for the address", address, "located", distance, "KM from the restaurant is $", deliveryCharge)
@@ -125,7 +131,7 @@ orderType = int(input("Order type (1 for dine in, 2 for pick up, 3 for delivery)
 # dineInOrderType = 1,
 # pickupOrderType = 2,
 # deliveryOrderType = 3
-if orderType == 1:
+if orderType == 1: # it checks orderType and charges according to that using comparative operators.
     totalCharges = orderCost * 1.08
 elif orderType == 2:
     totalCharges = orderCost
@@ -133,7 +139,7 @@ elif orderType == 3:
     totalCharges = orderCost * 1.1
 else:
     print("Invalid order type. Please enter 1, 2, or 3.")
-    exit()
+    
 
 
 print("Total charges: AUD", totalCharges)
@@ -157,7 +163,8 @@ elif conversionForm == 2:
     print(temperature, "Fahrenheit =", temperatureConverted, "Centigrade")
 else:
     print("Invalid entry.")
-
+    
+    
 
 
 
@@ -176,7 +183,7 @@ elif position == "delivery":
     payRate = 35
 else:
     print("Invalid position.")
-    exit()
+   
 
 grossIncome = payRate * hoursWorked
 

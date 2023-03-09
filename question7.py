@@ -12,3 +12,4 @@ elif conversionForm == 2:
     print(temperature, "Fahrenheit =", temperatureConverted, "Centigrade")
 else:
     print("Invalid entry.")
+    exit() #with this aFter calculation is done the execution ends iF it prints Invalid entry.
