@@ -174,7 +174,6 @@ else:
 position = str.lower(input("Enter the position of the employee (chef, waiter, or delivery): "))
 hoursWorked = float(input("Enter the number of monthly hours worked: "))
 
-
 # checks the position that user has entered.
 if position == "chef":
     payRate = 50
