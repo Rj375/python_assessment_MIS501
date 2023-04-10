@@ -13,16 +13,22 @@
 //     var num = 5
 // }
 
-function Banana(diameter){
-    this.color = 'yellow';
-    this.length = length;
-    this.diameter = diameter;
-    this.isYummy = true ;
-    let rot = function() {
-        this.isYummy = !false;
-        console.log(color, length, this.diameter, isYummy)
-    }
-    rot()
-};
+// function Banana(diameter){
+//     this.color = 'yellow';
+//     this.length = length;
+//     this.diameter = diameter;
+//     this.isYummy = true ;
+//     let rot = function() {
+//         this.isYummy = !false;
+//         console.log(color, length, this.diameter, isYummy)
+//     }
+//     rot()
+// };
 
-Banana()
+// Banana()
+
+const a = [1,2,3]
+const b = [...a,4,5]
+const c = a
+c.push(4)
+console.log(a.length)
