@@ -31,4 +31,9 @@ const a = [1,2,3]
 const b = [...a,4,5]
 const c = a
 c.push(4)
-console.log(a.length)
+console.log(a.length) //result is 4
+console.log(b.length) //result is 5
+
+const value = 20.0
+const result = Number.isInteger(value)
+console.log(result) // result is true
