@@ -37,3 +37,10 @@ console.log(b.length) //result is 5
 const value = 20.0
 const result = Number.isInteger(value)
 console.log(result) // result is true
+
+
+const hello = () => {
+    return (() => 0)()
+}
+console.log(typeof hello()) // result is number
+console.log(typeof hello) // result is function
